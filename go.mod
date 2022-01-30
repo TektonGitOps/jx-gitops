@@ -49,7 +49,8 @@ replace (
 	//knative.dev/pkg => knative.dev/pkg v0.0.0-20210730172132-bb4aaf09c430
 
 	// override the go-scm from tekton
-	github.com/jenkins-x/go-scm => github.com/jenkins-x/go-scm v1.10.11
+	github.com/jenkins-x/go-scm => /Users/haibo.wang1/code/jx/go-scm
+	github.com/jenkins-x/jx-helpers/v3 => /Users/haibo.wang1/code/jx/jx-helpers
 
 	// for the PipelineRun debug fix see: https://github.com/tektoncd/pipeline/pull/4145
 	github.com/tektoncd/pipeline => github.com/jstrachan/pipeline v0.21.1-0.20210811150720-45a86a5488af
