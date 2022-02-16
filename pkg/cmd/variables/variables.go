@@ -656,7 +656,9 @@ func (o *Options) GetDashboardURL() (string, error) {
 
 // ToLower is required because repos with capitals in their names are not allowed in chartmuseum and it will throw a 500 error.
 func (o *Options) getRepoName() string {
-	return strings.ToLower(o.Options.Repository)
+	repo := strings.ToLower(o.Options.Repository)
+	repo = strings.ReplaceAll(repo, "/", "-")
+	return repo
 }
 
 func configMapKeyToEnvVar(k string) string {
