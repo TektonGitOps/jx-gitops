@@ -197,7 +197,10 @@ func (o *Options) Validate() error {
 		{
 			Name: "APP_NAME",
 			Function: func() (string, error) {
-				return o.Options.Repository, nil
+				// 多级仓库时，替换/为-，防止docker镜像名称中含/
+				repo := o.Options.Repository
+				repo = strings.ReplaceAll(repo, "/", "-")
+				return repo, nil
 			},
 		},
 		{
